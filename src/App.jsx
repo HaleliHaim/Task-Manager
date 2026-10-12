@@ -56,10 +56,11 @@ export default function App() {
   // ================================================================
 
   function getAllTasks(tasks) {
-    // TODO
+    return tasks;
   }
 
   function getIncompleteTasks(tasks) {
+    
     // TODO
   }
 
