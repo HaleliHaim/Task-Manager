@@ -60,32 +60,51 @@ export default function App() {
   }
 
   function getIncompleteTasks(tasks) {
-    
-    // TODO
+    const result=tasks.filter(task=>task.completed===false)
+    return result;
   }
 
   function findTaskByTitle(tasks, title) {
-    // TODO
+    return tasks.find(task => task.title.toLowerCase().includes(title.toLowerCase()));
   }
 
+
   function countCompletedTasks(tasks) {
-    // TODO
+    const result= tasks.filter(task=>task.completed===true);
+    return result.length;
   }
 
   function addTask(tasks, newTask) {
-    // TODO
+    return [...tasks,newTask];
   }
 
   function removeTask(tasks, id) {
-    // TODO
+    const newTasks=tasks.filter(task=> task.id!==id);
+    return newTasks;
   }
 
   function toggleTaskCompleted(tasks, id) {
-    // TODO
+    const toggle= tasks.map((task) => {
+      if(task.id===id){
+        return {...task,completed:!task.completed};
+      }
+      else{
+        return task;
+      }
+    })
+    return toggle;
   }
 
   function updateTaskPriority(tasks, id, newPriority) {
-    // TODO
+    const newUpdate= tasks.map((task) => {
+      if(task.id===id){
+        return {...task,priority:task.priority===newPriority};
+      }
+      else{
+        return task;
+      }
+    })
+    return newUpdate;
   }
 
   // ================================================================
