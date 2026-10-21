@@ -98,7 +98,7 @@ export default function App() {
   function updateTaskPriority(tasks, id, newPriority) {
     const newUpdate= tasks.map((task) => {
       if(task.id===id){
-        return {...task,priority:task.priority===newPriority};
+        return {...task,priority:newPriority};
       }
       else{
         return task;
